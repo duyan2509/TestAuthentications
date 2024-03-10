@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "10812165899",
+    "project_id": "testauth-b1786",
+    "storage_bucket": "testauth-b1786.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10812165899:android:865635ac598afc1a329c0e",
+        "android_client_info": {
+          "package_name": "com.example.testauthentication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeTalLMPmJ1OHRP-VDyphgxex_0oJMqmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
