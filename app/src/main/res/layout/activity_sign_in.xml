@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp_Activity"
+    tools:context=".SignIn_Activity"
     android:orientation="vertical"
     android:paddingVertical="36dp"
     android:paddingHorizontal="24dp"
@@ -33,13 +33,13 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="1"
-        android:text="Email or Phone number"
+        android:text="Email"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/edEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -62,7 +62,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/edPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -85,7 +85,7 @@
         android:textAlignment="viewEnd"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btSignIn"
         android:layout_width="match_parent"
         android:layout_height="19dp"
         android:layout_marginVertical="12dp"

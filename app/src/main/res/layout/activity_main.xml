@@ -4,15 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="471dp"
+            app:srcCompat="@drawable/on_boarding" />
+    </androidx.cardview.widget.CardView>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Account!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingHorizontal="40dp"
+        android:text="Complete Collection Of Colors And Sizes"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="Urna amet, suspendisse ullamcorper ac elit diam facilisis cursus vestibulum"
+        android:textAlignment="center"
+        android:textColor="@color/material_dynamic_secondary60" />
+
+    <Button
+        android:id="@+id/btCreateAcc"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Create Account"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txHaveAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:text="Already Have an Account"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary_variant" />
+
 
 </LinearLayout>
