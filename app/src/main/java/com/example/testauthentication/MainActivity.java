@@ -4,15 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.core.splashscreen.SplashScreen;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private Button signUp;
@@ -20,40 +27,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        androidx.core.splashscreen.SplashScreen.installSplashScreen(this);
 
-        skipAuth();
+        setContentView(R.layout.activity_onboarding);
 
+        ImageSlider imageSlider = findViewById(R.id.imageSlider);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
 
-        signUp = (Button) findViewById(R.id.btCreateAcc);
-        signUp.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Button Clicked",
-                        Toast.LENGTH_SHORT).show();
-                Intent i = new Intent();
-                i.setClass(MainActivity.this,SignUp_Activity.class);
-                startActivity(i);
-            }
-        });
+        slideModels.add(new SlideModel(R.drawable.onboarding,"Various Collection Of The Latest Products",  ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.onboarding1, "Complete Collection Of Colors And Sizes", ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.onboarding2,"Find The Most Suitable Outfit For You", ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.onboarding3, ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 
-        TextView signIn = findViewById(R.id.txHaveAcc);
-        signIn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(MainActivity.this,SignIn_Activity.class);
-                startActivity(i);
-            }
-        });
-
-
-
+//        skipAuth();
+//
     }
-    private void skipAuth(){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null)
-            startActivity(new Intent(MainActivity.this,UserActivity.class));
-        else return;
+
+    public void signUp(View view){
+        startActivity(new Intent(MainActivity.this,SignUp_Activity.class));
     }
+
+    public void signIn(View view){
+        startActivity(new Intent(MainActivity.this,SignIn_Activity.class));
+    }
+//
+//    private void skipAuth(){
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        if(user!=null)
+//            startActivity(new Intent(MainActivity.this,UserActivity.class));
+//        else return;
+//    }
 }
